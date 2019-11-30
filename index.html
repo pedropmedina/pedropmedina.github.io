@@ -30,7 +30,9 @@
             </h2>
           </section>
           <section class="profile__experience">
-            <h3 class="heading">What have I worked with?</h3>
+            <h3 class="profile__experience__heading">
+              What have I worked with?
+            </h3>
             <ul class="technologies">
               <li class="technology">01. HTML & CSS</li>
               <li class="technology">02. Javascript</li>
@@ -55,6 +57,13 @@
           </div>
           <!-- project #1 -->
           <article class="project fade">
+            <div class="project__image-container">
+              <img
+                class="project__image"
+                src="assets/sail.png"
+                alt="sail app image"
+              />
+            </div>
             <section class="project__content">
               <header class="header">
                 <h4 class="title">Sail</h4>
@@ -93,11 +102,36 @@
           </article>
           <!-- project #2 -->
           <article class="project fade">
+            <div class="project__image-container">
+              <img
+                class="project__image"
+                src="assets/sail.png"
+                alt="sail app image"
+              />
+            </div>
             <section class="project__content">
-              <h4 class="title"><a href="#">02. Second App</a></h4>
-              <p class="description">
-                this is just a placeholder
-              </p>
+              <header class="header">
+                <h4 class="title">App #2</h4>
+                <div class="icons">
+                  <a
+                    href="https://github.com/pedropmedina/sail-front"
+                    target="_blank"
+                  >
+                    <svg>
+                      <use href="assets/sprite.svg#icon-github"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://heuristic-jepsen-3b3056.netlify.com"
+                    target="_blank"
+                  >
+                    <svg>
+                      <use href="assets/sprite.svg#icon-arrow-up-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </header>
+              <p class="description">this another app</p>
               <ul class="technologies">
                 <li class="technology">react</li>
                 <li class="technology">graphql</li>
@@ -171,7 +205,7 @@
             ''
           );
         }
-        projects[slideIndex - 1].style.display = 'block';
+        projects[slideIndex - 1].style.display = 'grid';
         controllers[slideIndex - 1].className += ' active';
       }
     </script>
