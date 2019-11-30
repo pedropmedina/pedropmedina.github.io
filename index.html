@@ -5,29 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Pedro P Medina</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pedro P Medina | Software Engineer</title>
   </head>
   <body>
-    <article>
-      <section>
-        <figure>
-          <img src="" atl="" />
-          <h1>Pedro P Medina</h1>
+    <div class="wrapper">
+      <!-- header -->
+      <header>
+        <figure class="avatar">
+          <img class="avatar__img" src="assets/avatar.jpg" atl="profile pic" />
         </figure>
-        <h2>Contact</h2>
-        <p>Email: pedrodelilia@gmail.com</p>
-        <p>Phone: 786-###-####</p>
-      </section>
-      <section>
-        <article>
-          <h3>Projects</h3>
-          <section>
-            <h4>Sail</h4>
-            <p>Make plans with family and friends smooth sailing</p>
-            <a href="#">Sail</a>
+      </header>
+      <!-- main -->
+      <main>
+        <!--  profile and relevant info -->
+        <article class="profile">
+          <section class="profile__details">
+            <h1 class="title">Hi, just a dude id as Pedro</h1>
+            <h2 class="subtitle">
+              My goal; simplify complicated stuff with code
+            </h2>
+          </section>
+          <section class="profile__experience">
+            <h3 class="heading">What have I worked with?</h3>
+            <ul class="technologies">
+              <li class="technology">01. HTML & CSS</li>
+              <li class="technology">02. Javascript</li>
+              <li class="technology">03. Typescript</li>
+              <li class="technology">04. Nodejs</li>
+              <li class="technology">05. Python</li>
+              <li class="technology">06. Mongodb</li>
+              <li class="technology">07. Postgres</li>
+              <li class="technology">08. Graphql</li>
+            </ul>
           </section>
         </article>
-      </section>
-    </article>
+
+        <!--  projets slider -->
+        <article class="projects-slider">
+          <!-- slider arrows -->
+          <div class="arrow top" onclick="incrementSlide(-1)">
+            <svg><use href="assets/sprite.svg#icon-arrow-up"></use></svg>
+          </div>
+          <div class="arrow bottom" onclick="incrementSlide(1)">
+            <svg><use href="assets/sprite.svg#icon-arrow-down"></use></svg>
+          </div>
+          <!-- project #1 -->
+          <article class="project fade">
+            <section class="project__content">
+              <header class="header">
+                <h4 class="title">Sail</h4>
+                <div class="icons">
+                  <a
+                    href="https://github.com/pedropmedina/sail-front"
+                    target="_blank"
+                  >
+                    <svg>
+                      <use href="assets/sprite.svg#icon-github"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://heuristic-jepsen-3b3056.netlify.com"
+                    target="_blank"
+                  >
+                    <svg>
+                      <use href="assets/sprite.svg#icon-arrow-up-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </header>
+              <p class="description">
+                Make plans with family and friends smooth sailing
+              </p>
+              <ul class="technologies">
+                <li class="technology">react</li>
+                <li class="technology">graphql</li>
+                <li class="technology">expressjs</li>
+                <li class="technology">styled-components</li>
+                <li class="technology">mongodb</li>
+                <li class="technology">heroku</li>
+                <li class="technology">netlify</li>
+              </ul>
+            </section>
+          </article>
+          <!-- project #2 -->
+          <article class="project fade">
+            <section class="project__content">
+              <h4 class="title"><a href="#">02. Second App</a></h4>
+              <p class="description">
+                this is just a placeholder
+              </p>
+              <ul class="technologies">
+                <li class="technology">react</li>
+                <li class="technology">graphql</li>
+                <li class="technology">expressjs</li>
+                <li class="technology">styled-components</li>
+                <li class="technology">mongodb</li>
+                <li class="technology">heroku</li>
+                <li class="technology">netlify</li>
+              </ul>
+            </section>
+          </article>
+          <!-- projects controllers -->
+          <section class="controllers">
+            <span class="control" onclick="currentSlide(1)"></span>
+            <span class="control" onclick="currentSlide(2)"></span>
+            <span class="control" onclick="currentSlide(3)"></span>
+          </section>
+        </article>
+      </main>
+
+      <!--  site footer -->
+      <footer class="contact">
+        <div class="line start"></div>
+        <div class="icons">
+          <a href="mailto:pedrodelilia@gmail.com">
+            <svg><use href="assets/sprite.svg#icon-paper-plane-o"></use></svg>
+          </a>
+          <a href="https://github.com/pedropmedina" target="_blank">
+            <svg><use href="assets/sprite.svg#icon-github"></use></svg>
+          </a>
+          <a href="#" target="_blank">
+            <svg><use href="assets/sprite.svg#icon-linkedin2"></use></svg>
+          </a>
+        </div>
+        <div class="line end"></div>
+      </footer>
+    </div>
+
+    <!-- scripts -->
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function incrementSlide(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let projects = document.getElementsByClassName('project');
+        let controllers = document.getElementsByClassName('control');
+
+        if (n > projects.length) {
+          slideIndex = 1;
+        }
+
+        if (n < 1) {
+          slideIndex = projects.length;
+        }
+
+        for (let i = 0; i < projects.length; i++) {
+          projects[i].style.display = 'none';
+        }
+
+        for (let i = 0; i < controllers.length; i++) {
+          controllers[i].className = controllers[i].className.replace(
+            ' active',
+            ''
+          );
+        }
+        projects[slideIndex - 1].style.display = 'block';
+        controllers[slideIndex - 1].className += ' active';
+      }
+    </script>
   </body>
 </html>
