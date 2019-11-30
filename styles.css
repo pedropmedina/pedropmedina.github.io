@@ -20,21 +20,24 @@ body {
 }
 
 header {
-  grid-column: col-2-start / col-2-end;
-  align-self: center;
+  flex: 1 1 15%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-  grid-column: col-3-start / col-3-end;
+  flex: 1 1 85%;
+  padding: 1rem 2rem;
 
-  display: grid;
-  grid-template-columns:
-    [col-1-start] minmax(min-content, 29rem) [col-1-end col-2-start] minmax(
-      max-content,
-      1fr
-    )
-    [col-2-end];
-  column-gap: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+footer {
+  flex: 1 1 100%;
 }
 
 ul {
@@ -61,14 +64,10 @@ a:visited {
   max-width: 120rem;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: [col-1-start] minmax(min-content, 2rem) [col-1-end col-2-start] max-content [col-2-end col-3-start] minmax(
-      min-content,
-      1fr
-    );
-  column-gap: 2rem;
-  row-gap: 3rem;
+  display: flex;
+  justify-content: center;
   align-content: center;
+  flex-wrap: wrap;
 }
 
 header .avatar {
@@ -87,9 +86,7 @@ header .avatar {
 }
 
 main .profile {
-  grid-column: col-1-start / col-1-end;
-  padding-left: 2rem;
-  align-self: center;
+  flex: 1 1 25%;
 }
 
 .profile__details h1,
@@ -118,7 +115,7 @@ h2 {
 }
 
 main .projects-slider {
-  grid-column: col-2-start / col-2-end;
+  flex: 1 1 75%;
 
   display: grid;
   grid-template-columns: [col-1-start] 2rem [col-1-end col-2-start] 1fr [col-2-end col-3-start] 2rem [col-3-end];
