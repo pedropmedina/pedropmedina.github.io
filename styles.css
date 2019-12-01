@@ -74,26 +74,33 @@ main .profile > * {
   margin-bottom: var(--size-s);
 }
 
-.profile__details h1,
-h2 {
-  font-weight: 400;
-  padding: var(--size-xxs) 0;
+main .profile > *:last-child {
+  margin-top: var(--size-m);
 }
 
 .profile__details .title {
+  font-weight: 400;
+  padding: var(--size-xxs) 0;
   font-size: var(--font-size-l);
-}
-
-.profile__details .subtitle {
-  font-size: var(--font-size-s);
 }
 
 .profile__experience__heading {
   font-weight: 600;
+  padding: 0.5rem 0;
+  font-size: var(--font-size-m);
 }
 
 .profile__experience .technologies .technology {
+  font-size: var(--font-size-s);
+}
+
+.profile__quote {
   font-size: var(--font-size-xs);
+}
+
+.profile__quote footer {
+  padding: 1rem 0;
+  text-indent: 1rem;
 }
 
 main .projects-slider {
