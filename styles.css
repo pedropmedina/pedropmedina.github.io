@@ -1,25 +1,3 @@
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-  height: 100%;
-}
-
-body {
-  background-color: #fff;
-  color: #434343;
-  line-height: 1.6;
-  height: 100%;
-  font-family: 'Source Code Pro', monospace;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
 header {
   flex: 1 1 15%;
 
@@ -30,7 +8,7 @@ header {
 
 main {
   flex: 1 1 85%;
-  padding: 1rem 2rem;
+  padding: var(--size-xs) var(--size-s);
 
   display: flex;
   flex-wrap: wrap;
@@ -47,15 +25,15 @@ ul {
 
 svg {
   fill: currentColor;
-  width: 2rem;
-  height: 2rem;
+  width: var(--size-s);
+  height: var(--size-s);
 }
 
 a:link,
 a:active,
 a:visited {
   text-decoration: none;
-  color: rgba(41, 61, 90, 0.99);
+  color: var(--color-dark-grey);
   display: inline-block;
 }
 
@@ -64,6 +42,8 @@ a:visited {
   width: 100%;
   max-width: 120rem;
   margin: 0 auto;
+  overflow-y: auto;
+  padding: 2rem 0;
 
   display: flex;
   justify-content: center;
@@ -72,8 +52,8 @@ a:visited {
 }
 
 header .avatar {
-  width: 15rem;
-  height: 15rem;
+  width: var(--size-xl);
+  height: var(--size-xl);
 }
 
 .avatar .avatar__img {
@@ -82,29 +62,30 @@ header .avatar {
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
-  border: 0.2rem solid rgba(41, 61, 90, 0.99);
-  padding: 0.5rem;
+  border: 0.2rem solid var(--color-dark-grey);
+  padding: var(--size-xxs);
 }
 
 main .profile {
   flex: 1 1 25%;
 }
 
+main .profile > * {
+  margin-bottom: var(--size-s);
+}
+
 .profile__details h1,
 h2 {
   font-weight: 400;
+  padding: var(--size-xxs) 0;
 }
 
 .profile__details .title {
-  font-size: 2rem;
+  font-size: var(--font-size-l);
 }
 
 .profile__details .subtitle {
-  font-size: 1.2rem;
-}
-
-.profile__experience {
-  padding-top: 2rem;
+  font-size: var(--font-size-s);
 }
 
 .profile__experience__heading {
@@ -112,7 +93,7 @@ h2 {
 }
 
 .profile__experience .technologies .technology {
-  font-size: 1.2rem;
+  font-size: var(--font-size-xs);
 }
 
 main .projects-slider {
@@ -136,9 +117,10 @@ main .projects-slider {
   grid-column: 1 / -2;
   grid-row: 1 / 11;
 
-  border-radius: 0.5rem;
-  box-shadow: 0 1rem 0.7rem 0.2rem rgba(0, 0, 0, 0.1);
+  border-radius: var(--size-xxs);
+  box-shadow: 0 1rem 0.7rem 0.2rem var(--color-translucent-black);
   position: relative;
+  overflow: hidden;
 }
 
 .project__image-container::before {
@@ -148,25 +130,25 @@ main .projects-slider {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(136, 146, 176, 0.3);
+  background-color: var(--color-medium-grey);
 }
 
 .project__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: cover;
+  object-position: left;
 }
 
 .project__content {
   grid-column: 6 / -1;
   grid-row: 6 / -1;
 
-  padding: 1.5rem 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1rem 0.7rem 0.2rem rgba(0, 0, 0, 0.1);
-  background-color: rgba(41, 61, 90, 0.99);
-  color: rgb(168, 178, 209);
+  padding: var(--size-s);
+  border-radius: var(--size-xxs);
+  box-shadow: 0 1rem 0.7rem 0.2rem var(--color-translucent-black);
+  background-color: var(--color-dark-grey);
+  color: var(--color-light-grey);
   z-index: 1;
 }
 
@@ -179,7 +161,7 @@ main .projects-slider {
 }
 
 .project__content .header .icons a {
-  color: rgb(168, 178, 209);
+  color: var(--color-light-grey);
 }
 
 .project__content .header .icons svg {
@@ -188,13 +170,13 @@ main .projects-slider {
 
 .project__content .header .title {
   padding: 1rem 0;
-  font-size: 2rem;
-  color: #fff;
+  font-size: var(--font-size-l);
+  color: var(--color-white);
 }
 
 .project__content .description {
   padding: 1rem 0;
-  font-size: 1.6rem;
+  font-size: var(--font-size-m);
 }
 
 .project__content .technologies {
@@ -206,10 +188,10 @@ main .projects-slider {
 .project__content .technologies .technology {
   padding: 0.1rem 0.5rem;
   margin: 0.2rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: rgb(100, 114, 161);
+  background-color: var(--color-translucent-black);
+  color: rgb(104, 120, 167);
   border-radius: 1rem;
-  font-size: 1.4rem;
+  font-size: var(--font-size-s);
 }
 
 .projects-slider .controllers {
@@ -224,17 +206,16 @@ main .projects-slider {
   height: 1.5rem;
   margin-bottom: 0.5rem;
   border-radius: 50%;
-  background-color: #eee;
+  background-color: var(--color-translucent-black);
   transition: background-color 0.6s ease;
 }
 
 .control.active {
-  background-color: rgba(41, 61, 90, 0.99);
+  background-color: var(--color-dark-grey);
 }
 
 .contact {
-  grid-column: 1 / -1;
-  color: rgba(41, 61, 90, 0.99);
+  color: var(--color-dark-grey);
   display: flex;
   align-items: center;
 }
@@ -244,9 +225,8 @@ main .projects-slider {
 }
 
 .contact .line {
-  width: 10rem;
   height: 0.1rem;
-  background-color: rgba(41, 61, 90, 0.99);
+  background-color: var(--color-dark-grey);
   margin-right: 2rem;
 }
 
@@ -266,7 +246,7 @@ main .projects-slider {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  color: rgba(41, 61, 90, 0.99);
+  color: var(--color-dark-grey);
   cursor: pointer;
 
   display: flex;
@@ -275,17 +255,17 @@ main .projects-slider {
 }
 
 .arrow svg {
-  width: 3rem;
-  height: 3rem;
+  width: var(--size-s);
+  height: var(--size-s);
 }
 
 .arrow:hover {
-  background-color: #efefef;
+  background-color: var(--color-translucent-black);
 }
 
 .arrow.top {
   grid-row: 1 / span 1;
-  color: rgba(41, 61, 90, 0.99);
+  color: var(--color-dark-grey);
 }
 
 .arrow.bottom {
@@ -310,5 +290,26 @@ main .projects-slider {
 @media (max-width: 970px) {
   main {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 570px) {
+  .project__content {
+    grid-column: 1 / -2;
+    grid-row: 1 / 11;
+    background-color: rgba(136, 146, 176, 0.89);
+  }
+
+  .project__content .technologies .technology {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--color-dark-grey);
+  }
+
+  .project__content .description {
+    color: var(--color-dark-grey);
+  }
+
+  .project__content .header .icons a {
+    color: rgba(41, 61, 90, 0.99);
   }
 }
