@@ -84,6 +84,11 @@ main .profile > *:last-child {
   font-size: var(--font-size-l);
 }
 
+.profile__details .subtitle {
+  font-size: var(--font-size-s);
+  font-weight: 400;
+}
+
 .profile__experience__heading {
   font-weight: 600;
   padding: 0.5rem 0;
