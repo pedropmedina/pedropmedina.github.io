@@ -1,181 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Pedro P Medina | Software Engineer</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Pedro P Medina</title>
   </head>
-  <body>
-    <div class="wrapper">
-      <!-- header -->
-      <header>
-        <figure class="avatar">
+  <body
+    class="font-[Inter] bg-[oklch(0%_0.0049_293)] text-[oklch(100%_0.0123_293)]"
+  >
+    <main>
+      <div class="text-center p-24">
+        <!-- Profile -->
+        <figure class="w-28 h-28 mx-auto mb-4">
           <img
-            class="avatar__img"
-            src="assets/profile-avatar.jpg"
-            atl="profile pic"
+            class="h-full w-full object-cover object-center rounded-full p-1 border border-white"
+            src="profile.jpg"
+            atl="profile"
           />
         </figure>
-      </header>
-      <!-- main -->
-      <main>
-        <!--  profile and relevant info -->
-        <article class="profile">
-          <section class="profile__details">
-            <h1 class="title">Pedro P. Medina</h1>
-            <h2 class="subtitle">Full-stack developer</h2>
-          </section>
-          <section class="profile__experience">
-            <h2 class="profile__experience__heading">
-              Currently working with:
-            </h2>
-            <ul class="technologies">
-              <li class="technology">01. HTML & CSS</li>
-              <li class="technology">02. Javascript</li>
-              <li class="technology">03. Typescript</li>
-              <li class="technology">04. Nodejs</li>
-              <li class="technology">05. Python</li>
-              <li class="technology">06. Mongodb</li>
-              <li class="technology">07. Postgres</li>
-              <li class="technology">08. Graphql</li>
-            </ul>
-          </section>
-          <section class="profile__quote">
-            <blockquote
-              cite="https://www.goodreads.com/quotes/tag/louisa-may-alcott"
-            >
-              <p>
-                I'm not afraid of storms, for I'm learning how to sail my ship.
-              </p>
-              <footer>—Louisa May Alcott</footer>
-            </blockquote>
-          </section>
-        </article>
-
-        <!--  projets slider -->
-        <article class="projects-slider">
-          <!-- slider arrows -->
-          <div class="arrow top" onclick="incrementSlide(-1)">
-            <svg><use href="assets/sprite.svg#icon-arrow-up"></use></svg>
+        <!-- Intro -->
+        <h1 class="text-4xl">Pedro P. Medina</h1>
+        <h2 class="text-2xl text-gray-400">Software Engineer</h2>
+        <!-- Links -->
+        <div>
+          <div>
+            <a href="mailto:pedrodelilia@gmail.com">pedrodelilia@gmail.com</a>
           </div>
-          <div class="arrow bottom" onclick="incrementSlide(1)">
-            <svg><use href="assets/sprite.svg#icon-arrow-down"></use></svg>
-          </div>
-          <!-- project #1 -->
-          <article class="project fade">
-            <div class="project__image-container">
-              <img
-                class="project__image"
-                src="assets/sail.png"
-                alt="sail app image"
-              />
-            </div>
-            <section class="project__content">
-              <header class="header">
-                <h4 class="title">Sail</h4>
-                <div class="icons">
-                  <a
-                    href="https://github.com/pedropmedina/sail-front"
-                    target="_blank"
-                  >
-                    <svg>
-                      <use href="assets/sprite.svg#icon-github"></use>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://heuristic-jepsen-3b3056.netlify.com"
-                    target="_blank"
-                  >
-                    <svg>
-                      <use href="assets/sprite.svg#icon-arrow-up-right"></use>
-                    </svg>
-                  </a>
-                </div>
-              </header>
-              <p class="description">
-                Make plans with family and friends smooth sailing.
-              </p>
-              <ul class="technologies">
-                <li class="technology">react</li>
-                <li class="technology">graphql</li>
-                <li class="technology">expressjs</li>
-                <li class="technology">styled-components</li>
-                <li class="technology">mongodb</li>
-                <li class="technology">heroku</li>
-                <li class="technology">netlify</li>
-              </ul>
-            </section>
-          </article>
-          <!-- projects controllers -->
-          <section class="controllers">
-            <span class="control" onclick="currentSlide(1)"></span>
-          </section>
-        </article>
-      </main>
-
-      <!--  site footer -->
-      <footer class="contact">
-        <div class="line start"></div>
-        <div class="icons">
-          <a href="mailto:pedrodelilia@gmail.com">
-            <svg><use href="assets/sprite.svg#icon-paper-plane-o"></use></svg>
-          </a>
-          <a href="https://github.com/pedropmedina" target="_blank">
-            <svg><use href="assets/sprite.svg#icon-github"></use></svg>
-          </a>
-          <a href="#" target="_blank">
-            <svg><use href="assets/sprite.svg#icon-linkedin2"></use></svg>
-          </a>
+          <a
+            class="underline underline-offset-4"
+            href="https://github.com/pedropmedina"
+            target="_blank"
+            >Github</a
+          >
+          <span class="text-gray-200">•</span>
+          <a
+            class="underline underline-offset-4"
+            href="https://www.linkedin.com/in/pedro-p-medina"
+            target="_blank"
+            >Linkedin</a
+          >
         </div>
-        <div class="line end"></div>
-      </footer>
-    </div>
-
-    <!-- scripts -->
-    <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      function incrementSlide(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        let projects = document.getElementsByClassName('project');
-        let controllers = document.getElementsByClassName('control');
-
-        if (n > projects.length) {
-          slideIndex = 1;
-        }
-
-        if (n < 1) {
-          slideIndex = projects.length;
-        }
-
-        for (let i = 0; i < projects.length; i++) {
-          projects[i].style.display = 'none';
-        }
-
-        for (let i = 0; i < controllers.length; i++) {
-          controllers[i].className = controllers[i].className.replace(
-            ' active',
-            ''
-          );
-        }
-        projects[slideIndex - 1].style.display = 'grid';
-        controllers[slideIndex - 1].className += ' active';
-      }
-    </script>
+        <!-- Skills -->
+        <ul
+          class="flex items-center justify-center flex-wrap w-2/4 mx-auto p-8 [&>li]:py-1 [&>li]:after:mx-2 [&>li]:after:text-gray-600 [&>li]:after:text-xs [&>li]:after:content-['•'] [&>li]:last:after:content-['']"
+        >
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript/Typescript</li>
+          <li>NodeJS</li>
+          <li>Python</li>
+          <li>Golang</li>
+          <li>Elixir</li>
+          <li>React</li>
+          <li>Vue</li>
+          <li>Svelte</li>
+          <li>Angular</li>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>SQLite</li>
+          <li>Mongo</li>
+          <li>Redis</li>
+          <li>AWS</li>
+          <li>Digital</li>
+          <li>Ocean</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>Github</li>
+          <li>Actions</li>
+          <li>CircleCI</li>
+          <li>Turborepo</li>
+          <li>NX</li>
+          <li>GraphQL</li>
+          <li>RPC</li>
+          <li>REST</li>
+        </ul>
+      </div>
+    </main>
   </body>
 </html>
